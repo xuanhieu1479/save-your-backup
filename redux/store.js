@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { USER_PROFILE } from "./constant";
 import { userProfileReducer } from "./reducers";
 
 const store = configureStore({
   reducer: {
-    userProfile: userProfileReducer,
+    [USER_PROFILE]: userProfileReducer,
   },
 });
 
