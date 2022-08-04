@@ -10,8 +10,10 @@ const defaultProps = {
 };
 
 const UserSelector = ({ users }) => (
-  <div style={{ width: 500, height: 500, backgroundColor: "white" }}>
-    <PrimaryButton text="primary" />
+  <div className="absolute bottom-4 left-4">
+    {users.map(() => (
+      <PrimaryButton text="primary" />
+    ))}
   </div>
 );
 
