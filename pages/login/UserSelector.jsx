@@ -9,11 +9,10 @@ const defaultProps = {
   users: [],
 };
 
+// eslint-disable-next-line no-unused-vars
 const UserSelector = ({ users }) => (
   <div className="absolute bottom-4 left-4">
-    {users.map(() => (
-      <PrimaryButton text="primary" />
-    ))}
+    <PrimaryButton text="primary" />
   </div>
 );
 
