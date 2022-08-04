@@ -1,14 +1,3 @@
-import React from "react";
-import { LoginLayout } from "components";
-
-const Home = () => (
-  <LoginLayout>
-    <div>Hello World</div>
-  </LoginLayout>
-);
-
-export const getStaticProps = () => ({
-  props: {},
-});
+import Home from "./login";
 
 export default Home;
