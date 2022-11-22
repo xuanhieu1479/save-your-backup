@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import { Stylesheet } from "@fluentui/react";
 
 export const applyFluentUIStyles = () => {
@@ -8,3 +7,5 @@ export const applyFluentUIStyles = () => {
   style.textContent = styleTags;
   document.head.appendChild(style);
 };
+
+export const isOnClient = () => typeof window !== "undefined";

@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Provider } from "react-redux";
-import store from "redux/store";
 import PropTypes from "prop-types";
-import { applyFluentUIStyles } from "helpers";
-import "styles/globals.css";
+import { initializeIcons } from "@fluentui/font-icons-mdl2";
 
-let injectedFluentUIStyles = false;
+import store from "redux/store";
+import { applyFluentUIStyles, isOnClient } from "helpers";
+import "styles/globals.scss";
 
 const propTypes = {
   Component: PropTypes.oneOfType([
@@ -17,14 +17,14 @@ const propTypes = {
 };
 
 const MyApp = ({ Component, pageProps }) => {
-  useEffect(() => {
+  if (isOnClient()) {
     // Inject FluentUI styles after the app has been loaded
     // to prevent tailwind from overriding FluentUI styles.
-    if (!injectedFluentUIStyles) {
-      injectedFluentUIStyles = true;
-      applyFluentUIStyles();
-    }
-  }, []);
+    applyFluentUIStyles();
+  }
+
+  // Initialize FluentUI icons
+  initializeIcons();
 
   return (
     <Provider store={store}>

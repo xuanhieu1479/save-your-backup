@@ -1,19 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+
 import { USER_PROFILE } from "redux/constant";
 
 const initialState = {
-  loginBackgroundImage:
-    "https://icatcare.org/app/uploads/2019/09/The-Kitten-Checklist-1.png",
+  email: "",
+  name: "",
+  backgroundImage: "",
 };
 
 export const userProfileSlice = createSlice({
   name: USER_PROFILE,
   initialState,
   reducers: {
-    updateLoginBackgroundImage: (_, action) => action.payload,
+    updateUserProfile: (state, action) => ({ ...state, ...action.payload }),
   },
 });
 
-export const { updateLoginBackgroundImage } = userProfileSlice.actions;
+export const { updateUserProfile } = userProfileSlice.actions;
 
 export default userProfileSlice.reducer;

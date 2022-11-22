@@ -1,0 +1,15 @@
+.login__user-select-button {
+  &:not(.bg-blue-500) {
+    &:hover {
+      background-color: var(--hover-background);
+    }
+  }
+
+  .ms-Persona-primaryText {
+    color: var(--white-text);
+
+    &:hover {
+      color: var(--white-text);
+    }
+  }
+}
